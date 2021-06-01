@@ -460,7 +460,7 @@ def shed(demographic_lst, series_lst):
 
 
     todo
-            1) How to use the if-else-elif syntax to filter for region?
+            - How to use the if-else-elif syntax to filter for region?
                     if type(obs_level) == list:
                         region_lst = obs_level
                     else:
@@ -470,9 +470,27 @@ def shed(demographic_lst, series_lst):
                             region_lst = c.states
                         else:
                             region_lst = ['US'] + c.states
-            2) How do we want to handle the weights?
-            3) What aother inputs do we want?
+                    --- pull other region variables for region (us, state, region1, region2)
+                    --- create us level observation
+                    --- will need to apply weights to get to the state, region, national level
+                    --- create a function to aggregate based on weights
+            - How do we want to handle the weights?
+            - Do we want to filter for years?
+            - What other inputs do we want?
+
+            Tasks:
+            1) get weight variable for final dataset
+                - look online for context about weights 
+            2) Aggregate to national, reigonal1, regional2, or state level:
+                - create a function in etl.py that allows users to specify the name of weight variable and observation level
+                    e.g.
+                        def survey_aggregate(df, weight_var, obs_level):
+                            if obs_level == 'us':
+                            #weighted average over all observations
+                            elif obs_level == 'state':
+                - Use df.groupby('fips').mean() in the above function to get certain statistics
         """
+
 
     return _shed_data_create(demographic_lst, series_lst)
 
