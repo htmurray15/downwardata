@@ -24,14 +24,11 @@ pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
 
 def _data_fetch():
-
-    df = shed(['age', 'gender'], ['med_exp_12_months'])
+    # df = shed('us', ['gender', 'race_ethnicity'], ['med_exp_12_months', 'man_financially'])
+    df = shed(['med_exp_12_months', 'man_financially'], 'us',)
     print(df.head())
     print(df.info())
-    # df.to_excel('/Users/hmurray/Desktop/shed_test.xlsx')
-    sys.exit()
+    df.to_csv('/Users/hmurray/Desktop/data/SHED/may_2021/data_create/6.3shed_test.csv')
 
 if __name__ == '__main__':
-     _data_fetch()
-    # _distribution_tests()
-    # _etl_tests()
+     df = _data_fetch()
