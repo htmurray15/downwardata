@@ -28,7 +28,7 @@ def _data_fetch():
     df = shed(['med_exp_12_months', 'man_financially'], 'us',)
     print(df.head())
     print(df.info())
-    df.to_csv('/Users/hmurray/Desktop/data/SHED/may_2021/data_create/6.3shed_test.csv')
+    df.to_csv('/Users/hmurray/Desktop/data/SHED/may_2021/data_create/shed_test.csv')
 
 if __name__ == '__main__':
      df = _data_fetch()
