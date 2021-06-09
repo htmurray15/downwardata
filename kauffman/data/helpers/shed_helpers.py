@@ -22,6 +22,7 @@ def _col_names_lowercase(df):
 
 def _shed_binary_weighter(df):
     print(df.columns)
+    # per_country['virus_confirmed'] = per_country.apply(lambda x: x['cases'] if x['type'] == "confirmed" else 0, axis=1)
     return df
 
 def _shed_2014(series_lst):
